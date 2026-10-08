@@ -1,6 +1,9 @@
 # Osama Al-Bassam - Personal Portfolio Website
 
-A clean, modern personal portfolio website built for **Osama Al-Bassam** (Software Engineering graduate from KFUPM Honors with a concentration in Cybersecurity & Blockchain, seeking roles in Software Engineering, Junior Cybersecurity / SOC Analysis, and Application Security).
+🌐 **Live Website:** [https://o5mu.github.io/osama-portfolio/](https://o5mu.github.io/osama-portfolio/)  
+📦 **GitHub Repository:** [https://github.com/O5mu/osama-portfolio](https://github.com/O5mu/osama-portfolio)
+
+A clean, modern personal portfolio website built for **Osama Al-Bassam** (Software Engineering graduate from KFUPM Honors with a concentration in Cybersecurity & Blockchain).
 
 ---
 
