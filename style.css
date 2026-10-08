@@ -64,7 +64,7 @@ body {
   align-items: center;
   padding: 0.3rem 0.6rem;
   border-radius: 0.375rem;
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 0.8vw, 0.82rem);
   font-family: var(--font-mono);
   background: #0a0e17;
   border: 1px solid #1e293b;
@@ -75,6 +75,86 @@ body {
   border-color: #3b82f6;
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+/* ============================================================
+   FLUID / RESPONSIVE LAYOUT
+   ============================================================ */
+
+/* Fluid base font: scales from 14px (mobile) → 16px (1080p) → 20px (4K) */
+html {
+  font-size: clamp(14px, 1.1vw, 22px);
+}
+
+/* Mobile: ensure tap targets are big enough */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* Prevent hero badge text overflow on tiny phones */
+  #hero .inline-flex span:last-child {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Card full-width on mobile */
+  #hero .grid > div {
+    width: 100%;
+  }
+
+  /* Make profile photo a bit smaller on very small screens */
+  #hero img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  /* Stack nav CTA buttons on mobile */
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+/* 1080p – default Tailwind layout is fine, just ensure no overflow */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* 2K (1440p) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Full HD edge: 1920px (3xl) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  html {
+    font-size: 18px;
+  }
+
+  .skill-tag {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* 4K (2560px+) */
+@media (min-width: 2560px) {
+  html {
+    font-size: 22px;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 /* Print CSS */

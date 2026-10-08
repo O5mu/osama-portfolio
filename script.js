@@ -110,13 +110,15 @@ function initInteractiveParticleCanvas() {
   window.addEventListener('resize', () => {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    // Update mouse radius on resize
+    mouse.radius = window.innerWidth >= 2560 ? 280 : window.innerWidth >= 1920 ? 200 : 160;
   });
 
   // Mouse / Touch tracking
   const mouse = {
     x: null,
     y: null,
-    radius: 160 // Connection and reaction radius
+    radius: window.innerWidth >= 2560 ? 280 : window.innerWidth >= 1920 ? 200 : 160
   };
 
   window.addEventListener('mousemove', (e) => {
@@ -141,8 +143,9 @@ function initInteractiveParticleCanvas() {
     mouse.y = null;
   });
 
-  // Particle creation
-  const particleCount = Math.min(Math.floor((width * height) / 14000), 85);
+  // Particle creation — scale count cap by resolution
+  const maxParticles = window.innerWidth >= 2560 ? 200 : window.innerWidth >= 1920 ? 130 : 85;
+  const particleCount = Math.min(Math.floor((width * height) / 14000), maxParticles);
   const particles = [];
 
   const colors = [
