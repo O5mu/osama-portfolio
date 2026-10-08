@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osama Al-Bassam | Software Engineer & Junior Cybersecurity Analyst</title>
+  <meta name="description" content="Portfolio of Osama Al-Bassam - KFUPM Honors Software Engineering graduate with strong focus in Full-Stack Development, Junior Cybersecurity / SOC Analysis, and Machine Learning.">
+  <meta name="keywords" content="Osama Al-Bassam, Software Engineer, Full-Stack Developer, Cybersecurity Analyst, SOC L1, KFUPM, SABIC, FastAPI, React, Node.js">
+  <meta name="author" content="Osama Al-Bassam">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Osama Al-Bassam | Software Engineer & Junior Cybersecurity Analyst">
+  <meta property="og:description" content="Software Engineering graduate (KFUPM Honors) experienced in full-stack systems, cybersecurity & SOC operations, and ML anomaly detection.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0e17] text-[#e2e8f0] font-sans antialiased selection:bg-blue-500/30 selection:text-blue-300">
+
+  <!-- Interactive Particle Canvas Background -->
+  <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Ambient Light -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[650px] h-[320px] bg-gradient-to-b from-blue-600/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none z-0"></div>
+  <div class="fixed inset-0 tech-grid pointer-events-none z-0"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0a0e17]/85 border-b border-slate-800 transition-all duration-300" id="navbar">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-sm text-blue-400 group-hover:border-blue-400 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all">
+          OA
+        </div>
+        <div class="flex flex-col">
+          <span class="font-mono text-sm font-semibold tracking-wider text-white group-hover:text-blue-400 transition-colors">
+            osama.dev<span class="text-blue-400 animate-pulse">_</span>
+          </span>
+          <span class="text-[10px] text-slate-400 font-mono tracking-tight">SWE · SOC · DATA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors">About</a>
+        <a href="#projects" class="text-slate-300 hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#experience" class="text-slate-300 hover:text-blue-400 transition-colors">Experience</a>
+        <a href="#education" class="text-slate-300 hover:text-blue-400 transition-colors">Education</a>
+        <a href="#skills" class="text-slate-300 hover:text-blue-400 transition-colors">Skills</a>
+        <a href="#contact" class="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="mailto:os.albassam@gmail.com" class="px-3 py-1.5 text-xs font-mono font-medium rounded-md border border-slate-700 text-slate-300 hover:text-white hover:border-blue-400 transition-all flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Contact
+        </a>
+        <button id="open-cv-btn" class="px-3.5 py-1.5 text-xs font-mono font-semibold rounded-md bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:opacity-95 shadow-md hover:shadow-blue-500/20 transition-all flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>CV / Resume</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-toggle" aria-label="Toggle navigation menu" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0d1322] border-b border-slate-800 px-4 pt-2 pb-4 space-y-2 font-mono text-sm">
+      <a href="#about" class="block py-2 text-slate-300 hover:text-blue-400">About</a>
+      <a href="#projects" class="block py-2 text-slate-300 hover:text-blue-400">Projects</a>
+      <a href="#experience" class="block py-2 text-slate-300 hover:text-blue-400">Experience</a>
+      <a href="#education" class="block py-2 text-slate-300 hover:text-blue-400">Education</a>
+      <a href="#skills" class="block py-2 text-slate-300 hover:text-blue-400">Skills</a>
+      <a href="#contact" class="block py-2 text-slate-300 hover:text-blue-400">Contact</a>
+      <div class="pt-2">
+        <button onclick="document.getElementById('open-cv-btn').click()" class="w-full text-center py-2 text-xs font-mono rounded bg-blue-600 text-white font-semibold">
+          View CV
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-24 pb-20">
+    <!-- HERO SECTION -->
+    <section id="hero" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Hero Main Content -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>SOFTWARE ENGINEER · CYBERSECURITY & SOC INTEREST</span>
+              </div>
+
+              <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Osama <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Al-Bassam</span>
+              </h1>
+              
+              <div>
+                <p class="text-lg sm:text-xl font-medium text-slate-200">
+                  Software Engineering Graduate · <span class="text-blue-400">KFUPM Honors</span>
+                </p>
+                <p class="text-xs sm:text-sm font-mono text-slate-400 mt-1">
+                  Full-Stack Systems · Junior SOC Analyst (L1) & AppSec · Machine Learning
+                </p>
+              </div>
+            </div>
+
+            <!-- Integrated Professional Summary -->
+            <div class="p-4 rounded-xl bg-[#0d1322] border border-slate-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <p>
+                Software Engineering graduate from <strong class="text-white">KFUPM (Honors, 3.47 GPA)</strong> with a concentration in <span class="text-cyan-300">Cybersecurity & Blockchain</span>. Experienced in full-stack development (React, Node.js, FastAPI), network-isolated architectures, and industrial ML anomaly detection pipelines. Seeking a <strong>Software Engineer</strong> or <strong>Junior Cybersecurity Analyst (SOC L1) / Application Security</strong> role applying secure development practices and analytical engineering to real-world systems.
+              </p>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-3 gap-3 pt-1">
+              <div class="p-3 rounded-lg bg-[#0d1322] border border-slate-800 text-center">
+                <div class="text-xl font-mono font-bold text-white">3.47<span class="text-xs text-slate-400">/4.00</span></div>
+                <div class="text-[11px] font-mono text-emerald-400">KFUPM Honors</div>
+              </div>
+              <div class="p-3 rounded-lg bg-[#0d1322] border border-slate-800 text-center">
+                <div class="text-xl font-mono font-bold text-blue-400">195k+</div>
+                <div class="text-[11px] font-mono text-slate-400">SABIC Sensor Data</div>
+              </div>
+              <div class="p-3 rounded-lg bg-[#0d1322] border border-slate-800 text-center">
+                <div class="text-xl font-mono font-bold text-cyan-400">91.1% <span class="text-xs font-normal">R²</span></div>
+                <div class="text-[11px] font-mono text-slate-400">ML Forecast Model</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="#projects" class="px-5 py-2.5 rounded-lg font-mono text-xs font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:opacity-95 shadow-md hover:shadow-blue-500/25 transition-all flex items-center gap-2">
+                <span>View Projects</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </a>
+              <button onclick="openCvModal()" class="px-4 py-2.5 rounded-lg font-mono text-xs font-semibold bg-[#111827] border border-slate-700 text-slate-200 hover:border-blue-400 hover:text-blue-300 transition-all flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>View CV</span>
+              </button>
+              <button onclick="navigator.clipboard.writeText('os.albassam@gmail.com'); showToast('Email copied to clipboard!');" class="px-4 py-2.5 rounded-lg font-mono text-xs font-medium bg-[#0f1626] border border-slate-800 text-slate-400 hover:text-white hover:border-slate-600 transition-all flex items-center gap-2" title="Copy Email">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>os.albassam@gmail.com</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Right: Candidate Profile Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl bg-[#0f1626] border border-slate-800 p-6 shadow-xl space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                  <span class="font-mono text-xs text-white font-semibold">Profile Overview</span>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-400">
+                  HONORS_GRADUATE
+                </span>
+              </div>
+
+              <!-- Profile Details -->
+              <div class="font-mono text-xs space-y-2.5 text-slate-300">
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">NAME:</span>
+                  <span class="text-white font-medium">Osama Al-Bassam</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">DEGREE:</span>
+                  <span class="text-slate-200">B.S. Software Engineering</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">INSTITUTION:</span>
+                  <span class="text-slate-200">KFUPM (2021 – 2026)</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">HONORS GPA:</span>
+                  <span class="text-emerald-400 font-bold">3.47 / 4.00</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">CONCENTRATION:</span>
+                  <span class="text-blue-300">Cybersecurity & Blockchain</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                  <span class="text-slate-500">INTERNSHIP:</span>
+                  <span class="text-slate-200">SABIC (Digital Transformation)</span>
+                </div>
+                <div class="flex justify-between items-center py-1">
+                  <span class="text-slate-500">LOCATION:</span>
+                  <span class="text-slate-200">Saudi Arabia</span>
+                </div>
+              </div>
+
+              <!-- Core Highlights Box -->
+              <div class="pt-3 border-t border-slate-800 space-y-2">
+                <div class="text-[11px] font-mono text-slate-400">AREAS OF EXPERTISE:</div>
+                <div class="space-y-1.5 text-xs font-mono">
+                  <div class="p-2 rounded bg-[#0a0e17] border border-slate-800/80 flex justify-between">
+                    <span class="text-slate-300 font-semibold">💻 Software Engineering</span>
+                    <span class="text-blue-400">React · Node · FastAPI</span>
+                  </div>
+                  <div class="p-2 rounded bg-[#0a0e17] border border-slate-800/80 flex justify-between">
+                    <span class="text-slate-300 font-semibold">🛡️ Cybersecurity & SOC</span>
+                    <span class="text-cyan-400">SOC L1 Labs · IAM · Wireshark</span>
+                  </div>
+                  <div class="p-2 rounded bg-[#0a0e17] border border-slate-800/80 flex justify-between">
+                    <span class="text-slate-300 font-semibold">📊 ML & Data Pipelines</span>
+                    <span class="text-emerald-400">RapidMiner · Scikit-learn</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION: 3 CORE CAPABILITIES (BALANCED) -->
+    <section id="about" class="py-14 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 bg-[#0d1322]/50">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-8 text-center max-w-xl mx-auto">
+          <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">// CORE CAPABILITIES</div>
+          <h2 class="text-2xl font-bold text-white">Full-Stack Craftsmanship with Security Rigor</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-2">
+            <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="font-bold text-white text-base">Full-Stack Software Engineering</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Skilled across the complete lifecycle: React frontends, Node.js/Express and Python/FastAPI backends, clean schema design (MongoDB, SQLite, SQL), and automated testing.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-2">
+            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="font-bold text-white text-base">Cybersecurity & SOC Operations</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hands-on TryHackMe SOC Level 1 lab training (alert triage, SIEM log correlation, packet inspection with Wireshark). Deep foundation in IAM (bcrypt/JWT/RBAC) and network-isolated architecture.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-2">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-bold text-white text-base">Data Pipelines & Anomaly Detection</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Proven at SABIC cleaning 195k sensor records with Lag Operators. Tuned unsupervised models (One-Class LIBSVM, LOF, INFLO) and Random Forest forecasting with 91.1% R².
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="mb-10">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">// PROJECT SHOWCASE</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Featured Projects</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Full-stack applications engineered in interdisciplinary teams.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- PROJECT 1: Senior Project -->
+        <div class="p-6 sm:p-7 rounded-2xl bg-[#0f1626] border border-slate-800 hover:border-blue-500/40 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono font-semibold bg-blue-500/10 border border-blue-500/30 text-blue-400">
+                SENIOR CAPSTONE PROJECT
+              </span>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+                5-PERSON INTERDISCIPLINARY TEAM
+              </span>
+            </div>
+            <span class="font-mono text-xs text-slate-400">Jan 2026 – May 2026</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">
+            Integrated Waste-to-Electricity System
+          </h3>
+          <p class="text-xs font-mono text-slate-400 mb-4">
+            Lead Software Architect & Developer | Tech: Python, FastAPI, SQLite, Scikit-learn, Streamlit
+          </p>
+
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+            Led software architecture and development for a 5-person interdisciplinary senior project, designing the control/monitoring/safety system, local API gateway, edge computing data layer, and dashboard UI.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 text-xs">
+            <div class="p-3 rounded-lg bg-[#0a0e17] border border-slate-800/80">
+              <div class="font-mono text-blue-400 font-semibold mb-1">💻 Edge Pipeline</div>
+              <p class="text-slate-400">Built an offline edge-computing pipeline (FastAPI + SQLite) with real-time anomaly detection and sensor telemetry ingestion.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-[#0a0e17] border border-slate-800/80">
+              <div class="font-mono text-emerald-400 font-semibold mb-1">📊 91.1% R² ML Model</div>
+              <p class="text-slate-400">Trained Random Forest model forecasting power output 60 min ahead, achieving 91.1% R² and MAE as low as 0.09W within the &le;10% error.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-[#0a0e17] border border-slate-800/80">
+              <div class="font-mono text-cyan-400 font-semibold mb-1">🛡️ Isolated Security</div>
+              <p class="text-slate-400">Designed network-isolated architecture with localhost-only API execution and tamper-resistant logging, verified by adapter disconnection.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/70">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Random Forest</span>
+            <span class="skill-tag">Edge Computing</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: KFUPM Study Hub -->
+        <div class="p-6 sm:p-7 rounded-2xl bg-[#0f1626] border border-slate-800 hover:border-emerald-500/40 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                FULL-STACK ACADEMIC PLATFORM
+              </span>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-blue-500/10 border border-blue-500/30 text-blue-300">
+                5-PERSON TEAM
+              </span>
+            </div>
+            <span class="font-mono text-xs text-slate-400">Feb 2025 – May 2025</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">
+            KFUPM Study Hub
+          </h3>
+          <p class="text-xs font-mono text-slate-400 mb-4">
+            Full-Stack Developer | Tech: React, Node.js, Express.js, MongoDB
+          </p>
+
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+            Built a full-stack academic platform for KFUPM students to track coursework and deadlines as part of a 5-person team, featuring automated alerts, resource moderation, and granular role permissions.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 text-xs">
+            <div class="p-3 rounded-lg bg-[#0a0e17] border border-slate-800/80">
+              <div class="font-mono text-blue-400 font-semibold mb-1">💻 Task & Resource System</div>
+              <p class="text-slate-400">Developed a task management system with categorization (assignments, exams, projects), calendar dashboard, automated email deadline reminders, and moderator review workflows.</p>
+            </div>
+            <div class="p-3 rounded-lg bg-[#0a0e17] border border-slate-800/80">
+              <div class="font-mono text-cyan-400 font-semibold mb-1">🛡️ bcrypt, JWT & 3-Tier RBAC</div>
+              <p class="text-slate-400">Implemented secure authentication using bcrypt password hashing and JWT session tokens, with Role-Based Access Control restricting actions across student, moderator, and admin tiers.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/70">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">JWT</span>
+            <span class="skill-tag">bcrypt</span>
+            <span class="skill-tag">RBAC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEDICATED SECTION 1: PROFESSIONAL EXPERIENCE -->
+    <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-slate-800">
+      <div class="mb-10">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">// INDUSTRY TRACK RECORD</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Professional Experience</h2>
+      </div>
+
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#0f1626] border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+          <div>
+            <h3 class="text-xl font-bold text-white">Saudi Basic Industries Corporation (SABIC)</h3>
+            <p class="text-xs font-mono text-blue-400">Data Science & Machine Learning Intern – Digital Transformation</p>
+          </div>
+          <div class="text-xs font-mono text-slate-400 text-left sm:text-right">
+            <div>June 2025 – August 2025</div>
+            <div>Jubail, Saudi Arabia</div>
+          </div>
+        </div>
+
+        <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5 list-disc list-inside leading-relaxed">
+          <li>Built a predictive maintenance pipeline for the <strong>Asset Health Care (AHC)</strong> project, detecting anomalies in industrial equipment (pumps, piping, sensor clusters) to reduce unplanned plant shutdowns and emergency maintenance costs.</li>
+          <li>Cleaned and processed <strong>195,033 sensor records</strong> in RapidMiner, engineering logic with the Lag Operator to filter offline states (&lt;2,500 threshold) and post-shutdown startup windows, reducing the dataset to 16,030 modeling-ready observations.</li>
+          <li>Designed and tuned three unsupervised anomaly detection models — <strong>One-Class LIBSVM (RBF kernel, ν=0.03), Local Outlier Factor (LOF), and Influenced Outlierness (INFLO)</strong> — to flag equipment deviations across multi-sensor dimensions.</li>
+          <li>Overcame a strict enterprise no-code constraint by implementing all modeling and preprocessing logic natively in RapidMiner, chaining nested loops, lag functions, and generate-attribute operators in place of custom scripts.</li>
+          <li>Engineered a post-processing layer to classify sustained anomalies (&ge;2 hours) and rank top contributing sensors, delivering structured diagnostic outputs that received full approval from department leadership.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DEDICATED SECTION 2: EDUCATION (COMPLETELY SEPARATE) -->
+    <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-slate-800">
+      <div class="mb-10">
+        <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1">// ACADEMIC FOUNDATION</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Education</h2>
+      </div>
+
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#0f1626] border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-4">
+          <div>
+            <h3 class="text-xl font-bold text-white">Bachelor of Science in Software Engineering (SWE)</h3>
+            <p class="text-sm font-semibold text-emerald-400">King Fahd University of Petroleum and Minerals (KFUPM)</p>
+          </div>
+          <div class="text-xs font-mono text-slate-400 text-left sm:text-right">
+            <div>August 2021 – May 2026</div>
+            <div>Dhahran, Saudi Arabia</div>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+            <span class="px-3 py-1 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 font-semibold">
+              GPA: 3.47 / 4.00 (Honors)
+            </span>
+            <span class="px-3 py-1 rounded bg-blue-950/60 border border-blue-500/40 text-blue-300 font-semibold">
+              Concentration: Cybersecurity & Blockchain
+            </span>
+          </div>
+          <p class="pt-1">
+            Graduated with Honors from Saudi Arabia's premier engineering institution. Comprehensive coursework covering Full-Stack Web Development, System Architecture, Requirements Engineering, Software Testing & QA, Database Systems, Cryptography, Network Security, and Distributed Systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX -->
+    <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-slate-800">
+      <div class="mb-10">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">// SKILLS & COMPETENCIES</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Technical Arsenal</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Comprehensive breakdown covering software engineering, cybersecurity, and data systems.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- 1. Software Engineering -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-blue-400">
+            <span>💻</span> Software Engineering
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">RESTful API Design</span>
+            <span class="skill-tag">System Architecture</span>
+            <span class="skill-tag">Requirements Engineering</span>
+            <span class="skill-tag">Software Testing & QA</span>
+            <span class="skill-tag">Agile Teamwork</span>
+          </div>
+        </div>
+
+        <!-- 2. Cybersecurity & SOC -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-cyan-400">
+            <span>🛡️</span> Cybersecurity & SOC
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">SOC Operations (TryHackMe L1 Labs)</span>
+            <span class="skill-tag">Alert Triage</span>
+            <span class="skill-tag">SIEM Log Correlation</span>
+            <span class="skill-tag">Wireshark Packet Analysis</span>
+            <span class="skill-tag">Identity & Access Management</span>
+            <span class="skill-tag">JWT</span>
+            <span class="skill-tag">bcrypt</span>
+            <span class="skill-tag">RBAC</span>
+            <span class="skill-tag">Network Security</span>
+            <span class="skill-tag">Cryptography (AES, RSA)</span>
+          </div>
+        </div>
+
+        <!-- 3. Security Tools -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-emerald-400">
+            <span>🔧</span> Security Tools & Linux
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">Wireshark</span>
+            <span class="skill-tag">Nmap</span>
+            <span class="skill-tag">Burp Suite</span>
+            <span class="skill-tag">Metasploit</span>
+            <span class="skill-tag">SIEM Platforms</span>
+            <span class="skill-tag">Kali Linux</span>
+            <span class="skill-tag">Linux CLI / Bash</span>
+            <span class="skill-tag">Network Isolation</span>
+          </div>
+        </div>
+
+        <!-- 4. ML & Data Engineering -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-purple-400">
+            <span>📊</span> ML & Data Pipelines
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">Predictive Modeling</span>
+            <span class="skill-tag">Anomaly Detection</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">RapidMiner Workflow</span>
+            <span class="skill-tag">Random Forest</span>
+            <span class="skill-tag">One-Class LIBSVM</span>
+            <span class="skill-tag">LOF</span>
+            <span class="skill-tag">INFLO</span>
+            <span class="skill-tag">Data Cleaning (195k+)</span>
+          </div>
+        </div>
+
+        <!-- 5. Databases & Programming -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-amber-400">
+            <span>💾</span> Databases & Languages
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Relational & NoSQL Schema</span>
+          </div>
+        </div>
+
+        <!-- 6. Certifications & Languages -->
+        <div class="p-5 rounded-xl bg-[#0f1626] border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-mono text-sm font-bold text-teal-400">
+            <span>📜</span> Certs & Languages
+          </div>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded bg-[#0a0e17] border border-slate-800">
+              <div class="font-bold text-white">RapidMiner Data Engineering & ML</div>
+              <div class="text-blue-300 font-mono text-[11px]">Professional & Master Certifications</div>
+            </div>
+            <div class="flex gap-2 pt-1 font-mono text-xs">
+              <span class="px-2 py-1 rounded bg-slate-800 text-slate-200">Arabic (Native)</span>
+              <span class="px-2 py-1 rounded bg-slate-800 text-slate-200">English (Professional)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-slate-800">
+      <div class="p-8 sm:p-10 rounded-2xl bg-[#0f1626] border border-slate-800 text-center space-y-6">
+        <div>
+          <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">// LET'S CONNECT</div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Get in Touch</h2>
+          <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-2">
+            Available for opportunities in <strong>Software Engineering</strong>, <strong>Junior Cybersecurity / SOC Analysis (L1)</strong>, and <strong>Application Security</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <a href="mailto:os.albassam@gmail.com" class="p-4 rounded-xl bg-[#0a0e17] border border-slate-800 hover:border-blue-400 transition-all text-center group">
+            <div class="text-xs font-mono text-slate-400">Email</div>
+            <div class="text-xs font-semibold text-white group-hover:text-blue-400 truncate mt-1">os.albassam@gmail.com</div>
+          </a>
+          <a href="https://linkedin.com/in/osama-albassam" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-[#0a0e17] border border-slate-800 hover:border-blue-400 transition-all text-center group">
+            <div class="text-xs font-mono text-slate-400">LinkedIn</div>
+            <div class="text-xs font-semibold text-white group-hover:text-blue-400 truncate mt-1">/in/osama-albassam</div>
+          </a>
+          <a href="tel:+966539355562" class="p-4 rounded-xl bg-[#0a0e17] border border-slate-800 hover:border-emerald-400 transition-all text-center group">
+            <div class="text-xs font-mono text-slate-400">Phone / WhatsApp</div>
+            <div class="text-xs font-semibold text-white group-hover:text-emerald-400 truncate mt-1">+966 53 935 5562</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-6 px-4 text-center font-mono text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>&copy; <span id="current-year"></span> Osama Al-Bassam · KFUPM Honors Graduate</div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <button onclick="openCvModal()" class="text-blue-400 hover:underline">View CV</button>
+        <span>·</span>
+        <a href="mailto:os.albassam@gmail.com" class="hover:text-white">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CV MODAL -->
+  <div id="cv-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#0f1626] border border-slate-800 rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto p-5 sm:p-7 relative shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+        <div>
+          <h3 class="text-lg font-bold text-white font-mono">Curriculum Vitae — Osama Al-Bassam</h3>
+          <p class="text-xs text-slate-400 font-mono mt-0.5">Software Engineering Graduate (KFUPM Honors)</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-3.5 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-semibold flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            Print / PDF
+          </button>
+          <button id="close-cv-modal-btn" class="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- CV Paper Render -->
+      <div id="cv-paper" class="bg-white text-slate-900 p-6 sm:p-8 rounded-xl shadow-inner font-sans text-xs leading-relaxed space-y-4">
+        <!-- Header -->
+        <div class="border-b border-slate-300 pb-3 text-center">
+          <h2 class="text-2xl font-bold text-slate-900">Osama Al-Bassam</h2>
+          <p class="text-slate-600 text-[11px] font-mono mt-0.5">
+            Saudi Arabia | +966 53 935 5562 | os.albassam@gmail.com | linkedin.com/in/osama-albassam
+          </p>
+        </div>
+
+        <!-- Summary -->
+        <div>
+          <h3 class="font-bold text-slate-900 uppercase text-xs border-b border-slate-200 pb-0.5 mb-1 text-blue-700">Professional Summary</h3>
+          <p class="text-slate-800 text-xs leading-relaxed">
+            Software Engineering graduate (KFUPM) with a Cybersecurity & Blockchain concentration, focused on secure system design, full-stack application development, and data-driven systems. Experienced in implementing authentication (JWT, bcrypt, RBAC), network-isolated architectures, and unsupervised anomaly detection pipelines across full-stack systems, with hands-on SOC exposure (alert triage, SIEM log analysis, Wireshark). Seeking a Software Engineer or Cybersecurity / Application Security role applying rigorous development and defense practices to real-world systems.
+          </p>
+        </div>
+
+        <!-- Education (Separated) -->
+        <div>
+          <h3 class="font-bold text-slate-900 uppercase text-xs border-b border-slate-200 pb-0.5 mb-1 text-blue-700">Education</h3>
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="font-bold text-slate-900">Bachelor of Science in Software Engineering (SWE)</div>
+              <div class="text-slate-700">King Fahd University of Petroleum and Minerals (KFUPM)</div>
+              <div class="text-slate-600 text-[11px]">Concentration: Cybersecurity & Blockchain | GPA: 3.47 / 4.00 (Honors)</div>
+            </div>
+            <div class="text-slate-600 text-right font-mono text-[11px]">August 2021 – May 2026</div>
+          </div>
+        </div>
+
+        <!-- Experience (Separated) -->
+        <div>
+          <h3 class="font-bold text-slate-900 uppercase text-xs border-b border-slate-200 pb-0.5 mb-1 text-blue-700">Professional Experience</h3>
+          <div>
+            <div class="flex justify-between items-start mb-1">
+              <div>
+                <div class="font-bold text-slate-900">Saudi Basic Industries Corporation (SABIC)</div>
+                <div class="text-slate-700 italic">Data Science & Machine Learning Intern – Digital Transformation</div>
+              </div>
+              <div class="text-right text-slate-600 font-mono text-[11px]">
+                <div>June 2025 – August 2025</div>
+                <div>Jubail, Saudi Arabia</div>
+              </div>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-slate-800 text-xs pl-1">
+              <li>Built a predictive maintenance pipeline for the Asset Health Care (AHC) project, detecting anomalies in industrial equipment (pumps, piping, sensor clusters) to reduce unplanned plant shutdowns and emergency maintenance costs.</li>
+              <li>Cleaned and processed 195,033 sensor records in RapidMiner, engineering logic with the Lag Operator to filter offline states (&lt;2,500 threshold) and post-shutdown startup windows, reducing the dataset to 16,030 modeling-ready observations.</li>
+              <li>Designed and tuned three unsupervised anomaly detection models — One-Class LIBSVM (RBF kernel, ν=0.03), Local Outlier Factor (LOF), and Influenced Outlierness (INFLO) — to flag equipment deviations across multi-sensor dimensions.</li>
+              <li>Overcame a strict no-code constraint by implementing all modeling and preprocessing logic natively in RapidMiner, chaining nested loops, lag functions, and generate-attribute operators in place of custom scripts.</li>
+              <li>Engineered a post-processing layer to classify sustained anomalies (&ge;2 hours) and rank top contributing sensors, delivering structured diagnostic outputs that received full approval from department leadership.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h3 class="font-bold text-slate-900 uppercase text-xs border-b border-slate-200 pb-0.5 mb-1 text-blue-700">Projects</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between items-start">
+                <div class="font-bold text-slate-900">
+                  Integrated Waste-to-Electricity System (Senior Project)
+                  <span class="font-normal text-slate-600 font-mono text-[11px]">| Python, FastAPI, SQLite, Scikit-learn, Streamlit</span>
+                </div>
+                <span class="text-slate-600 font-mono text-[11px]">Jan 2026 – May 2026</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-800 text-xs pl-1">
+                <li>Led software architecture and development for a 5-person interdisciplinary senior project, designing the control/monitoring/safety system, local API gateway, edge computing data layer, and dashboard UI.</li>
+                <li>Trained a Random Forest model to forecast power output 60 minutes ahead, achieving 91.1% R² and MAE as low as 0.09W within the &le;10% error.</li>
+                <li>Built an offline edge-computing pipeline (FastAPI + SQLite) with real-time anomaly detection.</li>
+                <li>Designed a network-isolated security architecture with localhost-only API execution and tamper-resistant logging, validated by disconnecting network adapters to confirm zero external calls.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start">
+                <div class="font-bold text-slate-900">
+                  KFUPM Study Hub
+                  <span class="font-normal text-slate-600 font-mono text-[11px]">| React, Node.js, Express.js, MongoDB</span>
+                </div>
+                <span class="text-slate-600 font-mono text-[11px]">Feb 2025 – May 2025</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-800 text-xs pl-1">
+                <li>Built a full-stack academic platform for KFUPM students to track coursework and deadlines, as part of a 5-person team.</li>
+                <li>Developed a task management system with categorization (assignments, exams, projects), a calendar dashboard, and automated email deadline reminders.</li>
+                <li>Developed a course resource system with upload, moderator review, and approval workflows for student-submitted materials.</li>
+                <li>Implemented secure authentication using bcrypt password hashing and JWT-based session tokens, with role-based access control (RBAC) restricting administrative and approval actions to authorized student, moderator, and admin tiers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div>
+          <h3 class="font-bold text-slate-900 uppercase text-xs border-b border-slate-200 pb-0.5 mb-1 text-blue-700">Skills</h3>
+          <ul class="space-y-1 text-slate-800 text-xs">
+            <li><strong>Software Engineering:</strong> Full-Stack Development (React, Node.js, Express.js, FastAPI), RESTful API Design, System Architecture, Requirements Engineering, Software Testing & QA, Agile Teamwork.</li>
+            <li><strong>Cybersecurity & SOC:</strong> SOC Operations (TryHackMe SOC Level 1 training — alert triage, SIEM log correlation, packet analysis), Identity & Access Management (JWT, bcrypt, RBAC), Network Security, Cryptography (AES, RSA, Diffie-Hellman).</li>
+            <li><strong>Security Tools:</strong> Nmap, Burp Suite, Metasploit, Wireshark, SIEM platforms, Kali Linux.</li>
+            <li><strong>Machine Learning & Data Engineering:</strong> Predictive Modeling & Anomaly Detection, Ensemble Learning (Random Forest), Unsupervised Anomaly Detection (One-Class SVM, LOF, INFLO), Scikit-learn, RapidMiner.</li>
+            <li><strong>Databases:</strong> MongoDB, SQLite, SQL, Relational & NoSQL Schema Design.</li>
+            <li><strong>Programming Languages:</strong> Python, C, JavaScript, SQL, Git.</li>
+          </ul>
+        </div>
+
+        <!-- Certifications & Languages -->
+        <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-200 text-xs">
+          <div>
+            <span class="font-bold text-slate-900 block">Certifications:</span>
+            <span class="text-slate-700">RapidMiner Data Engineering & Machine Learning (Professional & Master Certifications)</span>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 block">Languages:</span>
+            <span class="text-slate-700">Arabic (Native), English (Professional)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#0f172a] border border-blue-500/40 text-blue-300 px-4 py-2.5 rounded-xl font-mono text-xs shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Notification</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
