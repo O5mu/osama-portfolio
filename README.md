@@ -1,4 +1,4 @@
-# Osama Al-Bassam — Portfolio
+# Osama Al-Bassam · Portfolio
 
 Personal site of a software engineer (KFUPM, B.S. Software Engineering, Honors) working on secure full-stack systems and anomaly detection.
 
@@ -27,7 +27,7 @@ assets/portrait.jpg
 
 - **Type:** [Archivo](https://fonts.google.com/specimen/Archivo) for headings and text, [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) for labels.
 - **Color:** near-black on near-white, with KFUPM teal `#085f66` as the only accent.
-- **Diagrams:** the architecture diagram, RBAC table and data funnel are semantic HTML styled with CSS — no images — so they stay sharp and readable by screen readers.
+- **Diagrams:** the architecture diagram, RBAC table and data funnel are semantic HTML styled with CSS, with no images, so they stay sharp and readable by screen readers.
 - **Responsive:** tested from 375px phones to wide desktop monitors.
 
 ## Run locally
