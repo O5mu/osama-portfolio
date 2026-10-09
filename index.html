@@ -97,7 +97,7 @@
             stack run without the hardware rig.
           </p>
 
-          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to SQLite; anomaly detection and a 60-minute power forecast read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
+          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to SQLite; anomaly detection and a power-output model read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
             <div class="diagram__boundary">
               <span class="diagram__label">Offline — localhost only</span>
               <ol class="diagram__flow">
@@ -106,7 +106,7 @@
                 <li><b>SQLite</b><span>edge store, tamper-resistant log</span></li>
                 <li class="diagram__split">
                   <div><b>Anomaly detection</b><span>real-time</span></div>
-                  <div><b>Random Forest</b><span>60-min power forecast</span></div>
+                  <div><b>Random Forest</b><span>power-output estimate</span></div>
                 </li>
                 <li><b>Streamlit</b><span>live dashboard</span><em class="diagram__alarm">Alarm ≥ 60 PSI</em></li>
               </ol>
@@ -115,8 +115,8 @@
           </figure>
 
           <dl class="figures">
-            <div><dt>91.1%</dt><dd>R² on power output forecast 60 minutes ahead</dd></div>
-            <div><dt>0.09 W</dt><dd>lowest mean absolute error, within the ≤10% target</dd></div>
+            <div><dt>91.1%</dt><dd>R² estimating generator power from temperature and pressure</dd></div>
+            <div><dt>0.09 W</dt><dd>mean absolute error on the held-out test set</dd></div>
             <div><dt>0</dt><dd>external network calls with adapters disconnected</dd></div>
           </dl>
         </div>
