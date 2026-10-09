@@ -418,8 +418,8 @@ h2 mark { padding: 0 0.08em; margin: 0 -0.08em; }
   color: var(--ink-3);
 }
 
-@media (max-width: 900px) {
-  .diagram__flow { grid-template-columns: 1fr; gap: 26px; }
+@media (max-width: 1100px) {
+  .diagram__flow { grid-template-columns: 1fr; gap: 26px; max-width: 520px; }
   .diagram__split { grid-template-columns: 1fr 1fr; }
   .diagram__flow > li:not(:last-child)::after {
     content: "↓";

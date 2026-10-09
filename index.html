@@ -25,8 +25,8 @@
     <div class="wrap top__inner">
       <a href="#" class="top__name">Osama Al-Bassam</a>
       <nav class="top__nav" aria-label="Primary">
-        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
         <a href="#background" class="hide-sm">Background</a>
         <a href="#contact">Contact</a>
         <a href="cv.html" class="top__cv">Résumé</a>
@@ -60,6 +60,61 @@
         <img src="assets/portrait.jpg" alt="Osama Al-Bassam in KFUPM graduation regalia" width="900" height="1200">
         <figcaption><span>Osama Al-Bassam</span><span>KFUPM · SWE ’26</span></figcaption>
       </figure>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section wrap">
+      <div class="section__head">
+        <h2>Experience</h2>
+        <p class="meta">Internship, summer 2025</p>
+      </div>
+
+      <article class="job">
+        <header class="job__head">
+          <div>
+            <h3>SABIC</h3>
+            <p>Data Science &amp; Machine Learning Intern, Digital Transformation</p>
+          </div>
+          <p class="meta">Jun – Aug 2025 · Jubail</p>
+        </header>
+
+        <p class="job__lede">
+          Unplanned shutdowns at a petrochemical plant are expensive. For the Asset Health Care
+          project I built a predictive-maintenance pipeline that flags pumps, piping and sensor
+          clusters drifting away from normal behaviour. An enterprise rule allowed no custom
+          code, so every step lives natively in RapidMiner.
+        </p>
+
+        <ol class="pipeline">
+          <li>
+            <span class="pipeline__step">Clean</span>
+            <div class="pipeline__body">
+              <div class="bars" aria-hidden="true">
+                <div class="bar bar--full"><span>195,033 raw records</span></div>
+                <div class="bar bar--kept" style="--w: 8.22%"></div>
+              </div>
+              <p>Lag-operator logic removed offline states (below a 2,500 threshold) and post-shutdown start-up windows, leaving <strong>16,030</strong> modeling-ready observations.</p>
+            </div>
+          </li>
+          <li>
+            <span class="pipeline__step">Model</span>
+            <div class="pipeline__body">
+              <ul class="models">
+                <li>One-Class LIBSVM <span>RBF kernel, ν = 0.03</span></li>
+                <li>Local Outlier Factor <span>LOF</span></li>
+                <li>Influenced Outlierness <span>INFLO</span></li>
+              </ul>
+              <p>Three unsupervised detectors tuned across multi-sensor dimensions.</p>
+            </div>
+          </li>
+          <li>
+            <span class="pipeline__step">Explain</span>
+            <div class="pipeline__body">
+              <p>A post-processing layer keeps only anomalies sustained for <strong>two hours or more</strong> and ranks the sensors contributing most, giving engineers output they can act on. Approved by department leadership.</p>
+            </div>
+          </li>
+        </ol>
+      </article>
     </section>
 
     <!-- WORK -->
@@ -165,61 +220,6 @@
             <figcaption>Role-based access control, enforced server-side.</figcaption>
           </figure>
         </div>
-      </article>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section wrap">
-      <div class="section__head">
-        <h2>Experience</h2>
-        <p class="meta">Internship, summer 2025</p>
-      </div>
-
-      <article class="job">
-        <header class="job__head">
-          <div>
-            <h3>SABIC</h3>
-            <p>Data Science &amp; Machine Learning Intern, Digital Transformation</p>
-          </div>
-          <p class="meta">Jun – Aug 2025 · Jubail</p>
-        </header>
-
-        <p class="job__lede">
-          Unplanned shutdowns at a petrochemical plant are expensive. For the Asset Health Care
-          project I built a predictive-maintenance pipeline that flags pumps, piping and sensor
-          clusters drifting away from normal behaviour. An enterprise rule allowed no custom
-          code, so every step lives natively in RapidMiner.
-        </p>
-
-        <ol class="pipeline">
-          <li>
-            <span class="pipeline__step">Clean</span>
-            <div class="pipeline__body">
-              <div class="bars" aria-hidden="true">
-                <div class="bar bar--full"><span>195,033 raw records</span></div>
-                <div class="bar bar--kept" style="--w: 8.22%"></div>
-              </div>
-              <p>Lag-operator logic removed offline states (below a 2,500 threshold) and post-shutdown start-up windows, leaving <strong>16,030</strong> modeling-ready observations.</p>
-            </div>
-          </li>
-          <li>
-            <span class="pipeline__step">Model</span>
-            <div class="pipeline__body">
-              <ul class="models">
-                <li>One-Class LIBSVM <span>RBF kernel, ν = 0.03</span></li>
-                <li>Local Outlier Factor <span>LOF</span></li>
-                <li>Influenced Outlierness <span>INFLO</span></li>
-              </ul>
-              <p>Three unsupervised detectors tuned across multi-sensor dimensions.</p>
-            </div>
-          </li>
-          <li>
-            <span class="pipeline__step">Explain</span>
-            <div class="pipeline__body">
-              <p>A post-processing layer keeps only anomalies sustained for <strong>two hours or more</strong> and ranks the sensors contributing most, giving engineers output they can act on. Approved by department leadership.</p>
-            </div>
-          </li>
-        </ol>
       </article>
     </section>
 
