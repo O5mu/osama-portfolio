@@ -93,19 +93,20 @@
           <p>
             Sensors on the boiler stream temperature, pressure and voltage through an Arduino.
             The dashboard shows every reading live and raises an emergency alarm the moment
-            chamber pressure reaches the 60 PSI safety limit. A built-in simulator lets the whole
-            stack run without the hardware rig.
+            chamber pressure reaches the 60 PSI safety limit. Every reading is stored in an
+            append-only log where each entry is SHA-256 chained to the one before, so any edit or
+            deletion is detected. A built-in simulator lets the whole stack run without the hardware rig.
           </p>
 
-          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to SQLite; anomaly detection and a power-output model read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
+          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to an append-only, hash-chained SQLite log; a pressure safety check and a power-output model read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
             <div class="diagram__boundary">
               <span class="diagram__label">Offline — localhost only</span>
               <ol class="diagram__flow">
                 <li><b>Arduino</b><span>temp · pressure · voltage</span></li>
                 <li><b>FastAPI gateway</b><span>127.0.0.1, serial bridge</span></li>
-                <li><b>SQLite</b><span>edge store, tamper-resistant log</span></li>
+                <li><b>SQLite</b><span>append-only, hash-chained log</span></li>
                 <li class="diagram__split">
-                  <div><b>Anomaly detection</b><span>real-time</span></div>
+                  <div><b>Safety check</b><span>pressure &ge; 60 PSI</span></div>
                   <div><b>Random Forest</b><span>power-output estimate</span></div>
                 </li>
                 <li><b>Streamlit</b><span>live dashboard</span><em class="diagram__alarm">Alarm ≥ 60 PSI</em></li>
