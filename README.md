@@ -35,7 +35,7 @@ The site showcases full-stack web applications, industrial predictive telemetry 
 
 ## 📌 Featured Projects
 
-### 1. [Integrated Waste-to-Electricity System (Senior Project)](https://o5mu.github.io/osama-portfolio/#projects)
+### 1. [Integrated Waste-to-Electricity System (Senior Project)](https://o5mu.github.io/osama-portfolio/#work)
 - **Role:** Lead Software Architect & Developer (5-Person Interdisciplinary Team).
 - **Tech Stack:** Python, FastAPI, SQLite, Scikit-learn, Streamlit.
 - **Key Deliverables:**
@@ -44,7 +44,7 @@ The site showcases full-stack web applications, industrial predictive telemetry 
   - Trained a Random Forest model forecasting power output 60 minutes ahead (**91.1% R²**, MAE 0.09W).
   - Implemented network-isolated architecture with localhost-only API execution and tamper-resistant logging.
 
-### 2. [KFUPM Study Hub](https://o5mu.github.io/osama-portfolio/#projects)
+### 2. [KFUPM Study Hub](https://o5mu.github.io/osama-portfolio/#work)
 - **Role:** Full-Stack Developer (5-Person Team).
 - **Tech Stack:** React, Node.js, Express.js, MongoDB.
 - **Key Deliverables:**
