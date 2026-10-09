@@ -4,8 +4,6 @@ Personal site of a software engineer (KFUPM, B.S. Software Engineering, Honors) 
 
 **[o5mu.github.io/osama-portfolio](https://o5mu.github.io/osama-portfolio/)** · [Résumé](https://o5mu.github.io/osama-portfolio/cv.html)
 
-[![Portfolio homepage](docs/preview.jpg)](https://o5mu.github.io/osama-portfolio/)
-
 ## What's on the site
 
 | Section | Shows |
