@@ -150,12 +150,11 @@
             The dashboard shows every reading live and raises an emergency alarm the moment
             chamber pressure reaches the 60 PSI safety limit. Every reading is stored in an
             append-only log where each entry is SHA-256 chained to the one before, so any edit or
-            deletion is detected. Two Random Forest models estimate the generator&rsquo;s power from each
-            reading and forecast it 60 minutes ahead from the last half hour of sensor history and the
-            waste-feed schedule. A built-in simulator lets the whole stack run without the hardware rig.
+            deletion is detected. A Random Forest model forecasts the generator&rsquo;s power 60 minutes
+            ahead from the last half hour of sensor history and the waste-feed schedule. A built-in simulator lets the whole stack run without the hardware rig.
           </p>
 
-          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to an append-only, hash-chained SQLite log; a pressure safety check and Random Forest power-estimate and 60-minute forecast models read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
+          <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to an append-only, hash-chained SQLite log; a pressure safety check and a Random Forest 60-minute power forecast read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
             <div class="diagram__boundary">
               <span class="diagram__label">Offline · localhost only</span>
               <ol class="diagram__flow">
@@ -164,7 +163,7 @@
                 <li><b>SQLite</b><span>append-only, hash-chained log</span></li>
                 <li class="diagram__split">
                   <div><b>Safety check</b><span>pressure &ge; 60 PSI</span></div>
-                  <div><b>Random Forest</b><span>power estimate · 60-min forecast</span></div>
+                  <div><b>Random Forest</b><span>60-min power forecast</span></div>
                 </li>
                 <li><b>Streamlit</b><span>live dashboard</span><em class="diagram__alarm">Alarm ≥ 60 PSI</em></li>
               </ol>
@@ -173,8 +172,8 @@
           </figure>
 
           <dl class="figures">
-            <div><dt>91.1%</dt><dd>R² estimating generator power from temperature and pressure (0.09 W MAE)</dd></div>
             <div><dt>90.9%</dt><dd>R² forecasting generator power 60 minutes ahead on held-out runs</dd></div>
+            <div><dt>0.026 W</dt><dd>mean absolute error of the forecast</dd></div>
             <div><dt>0</dt><dd>external network calls with adapters disconnected</dd></div>
           </dl>
         </div>

@@ -111,7 +111,7 @@
         <p class="sub"><em>Python, FastAPI, SQLite, Scikit-learn, Streamlit</em></p>
         <ul>
           <li>Led software architecture and development for a 5-person interdisciplinary senior project, designing the monitoring and safety system, local API gateway, edge computing data layer, and dashboard UI.</li>
-          <li>Trained Random Forest models that estimate generator power from live sensor readings (91.1% R², 0.09 W MAE) and forecast it 60 minutes ahead (90.9% R² on held-out runs).</li>
+          <li>Trained a Random Forest model that forecasts generator power 60 minutes ahead from sensor history and the waste-feed schedule, achieving 90.9% R² and 0.026 W MAE on held-out runs.</li>
           <li>Built an offline edge-computing pipeline (FastAPI + SQLite) with real-time pressure safety alerts.</li>
           <li>Designed a network-isolated security architecture with localhost-only API execution and tamper-evident (hash-chained) logging, validated by disconnecting network adapters to confirm zero external calls.</li>
         </ul>

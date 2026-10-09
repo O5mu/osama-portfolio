@@ -9,7 +9,7 @@ Personal site of a software engineer (KFUPM, B.S. Software Engineering, Honors) 
 | Section | Shows |
 | --- | --- |
 | [Experience](https://o5mu.github.io/osama-portfolio/#experience) | SABIC predictive-maintenance pipeline: 195,033 sensor records reduced to 16,030, three unsupervised detectors, sustained-anomaly ranking. |
-| [Work](https://o5mu.github.io/osama-portfolio/#work) | **Integrated Waste-to-Electricity System** (senior capstone): offline architecture diagram, Random Forest power estimate at 91.1% R² and 60-minute power forecast at 90.9% R², hash-chained sensor log. **KFUPM Study Hub**: role-based access control matrix. Both link to their source. |
+| [Work](https://o5mu.github.io/osama-portfolio/#work) | **Integrated Waste-to-Electricity System** (senior capstone): offline architecture diagram, Random Forest 60-minute power forecast at 90.9% R², hash-chained sensor log. **KFUPM Study Hub**: role-based access control matrix. Both link to their source. |
 | [Background](https://o5mu.github.io/osama-portfolio/#background) | Education, tools, SOC Level 1 lab training, certifications. |
 | [Résumé](https://o5mu.github.io/osama-portfolio/cv.html) | Print-ready page; *Print / Save as PDF* produces a clean letter-size CV. |
 
