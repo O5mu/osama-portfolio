@@ -80,9 +80,10 @@ The site showcases full-stack web applications, industrial predictive telemetry 
 
 ## 🌐 Website Features
 
-- **Interactive Particle Background:** High-performance 2D Canvas featuring mouse-reactive particles that connect, glow, and disperse upon hover.
-- **Dedicated CV Modal & PDF Print:** Integrated modal with a clean print stylesheet for instant export to clean letter-sized PDF.
-- **Zero-Dependency Architecture:** Pure semantic HTML5, modern CSS, and vanilla JavaScript with instant loading speeds.
+- **Industrial-signage design:** Archivo (condensed bold headlines) + IBM Plex Mono, near-black on near-white with KFUPM teal (#085f66) as the single accent; no frameworks or UI kits.
+- **Work shown, not described:** a system architecture diagram for the capstone, an RBAC matrix for Study Hub, and a data-reduction funnel for the SABIC pipeline — all plain HTML/CSS.
+- **Print-ready résumé:** [`cv.html`](cv.html) prints cleanly to a letter-size PDF.
+- **Zero dependencies:** hand-written HTML, CSS and ~20 lines of JavaScript. Fully responsive from 360px phones to wide monitors.
 
 ---
 

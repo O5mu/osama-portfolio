@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résumé — Osama Al-Bassam</title>
+  <meta name="description" content="Résumé of Osama Al-Bassam, software engineer (KFUPM Honors).">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23085f66'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-weight='700' font-size='14' fill='%23ffffff' text-anchor='middle'%3EOA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper: #efefee; --ink: #0c0c0c; --ink-2: #4a4a4a; --ink-3: #8b8b8b; --rule: #e2e2e0; --mark: #085f66; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Archivo", system-ui, sans-serif; font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, p, ul { margin: 0; }
+    a { color: inherit; }
+
+    .bar { max-width: 816px; margin: 0 auto; padding: 20px 16px; display: flex; justify-content: space-between; align-items: center; font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-2); }
+    .bar a { text-decoration: none; }
+    .bar a:hover { color: var(--ink); }
+    .bar button { font: inherit; font-weight: 500; padding: 8px 14px; border-radius: 3px; border: 0; background: var(--mark); color: #fff; cursor: pointer; }
+    .bar button:hover { background: var(--ink); color: #fff; }
+
+    .sheet { max-width: 816px; margin: 0 auto 48px; background: #fff; padding: 56px 64px; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 32px rgba(0,0,0,.06); }
+    header h1 { font-weight: 700; font-stretch: 88%; font-size: 40px; line-height: 1; letter-spacing: -0.035em; }
+    header p { margin-top: 10px; color: var(--ink-2); font-size: 13px; }
+    header p span { white-space: nowrap; }
+    header p span + span::before { content: "·"; margin: 0 8px; color: var(--ink-3); }
+
+    section { margin-top: 26px; }
+    h2 { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mark); padding-bottom: 6px; border-bottom: 1.5px solid var(--mark); margin-bottom: 12px; }
+    .item + .item { margin-top: 16px; }
+    .row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .row h3 { font-size: 14.5px; font-weight: 600; }
+    .row .when { font-size: 12.5px; color: var(--ink-3); white-space: nowrap; text-align: right; }
+    .sub { color: var(--ink-2); }
+    .sub em { font-style: normal; color: var(--ink-3); }
+    ul { padding-left: 16px; margin-top: 6px; }
+    li { margin-top: 3px; }
+    li::marker { color: var(--ink-3); }
+    .skills p + p { margin-top: 4px; }
+    .skills b { font-weight: 600; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    @media (max-width: 640px) {
+      .sheet { padding: 32px 20px; margin-bottom: 0; box-shadow: none; }
+      .row { flex-direction: column; gap: 2px; }
+      .row .when { text-align: left; }
+      .two { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    @media print {
+      @page { size: letter; margin: 0.5in; }
+      body { background: #fff; font-size: 10pt; }
+      .bar { display: none; }
+      .sheet { padding: 0; margin: 0; box-shadow: none; max-width: none; }
+      header h1 { font-size: 26pt; }
+      section { margin-top: 14pt; break-inside: avoid-page; }
+      .item { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <a href="index.html">← Back to site</a>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <main class="sheet">
+    <header>
+      <h1>Osama Al-Bassam</h1>
+      <p>
+        <span>Saudi Arabia</span><span><a href="tel:+966539355562">+966 53 935 5562</a></span><span><a href="mailto:os.albassam@gmail.com">os.albassam@gmail.com</a></span><span><a href="https://linkedin.com/in/osama-albassam">linkedin.com/in/osama-albassam</a></span><span><a href="https://github.com/O5mu">github.com/O5mu</a></span>
+      </p>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>Software Engineering graduate (KFUPM) with a Cybersecurity &amp; Blockchain concentration, focused on secure system design, full-stack application development, and data-driven systems. Experienced in implementing authentication (JWT, bcrypt, RBAC), network-isolated architectures, and unsupervised anomaly detection pipelines across full-stack systems, with hands-on SOC exposure (alert triage, SIEM log analysis, Wireshark). Seeking a Software Engineer or Junior SOC Analyst role applying rigorous development and defense practices to real-world systems.</p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="row"><h3>B.S. Software Engineering</h3><span class="when">Aug 2021 – May 2026</span></div>
+        <p class="sub">King Fahd University of Petroleum and Minerals (KFUPM)</p>
+        <p class="sub"><em>Concentration: Cybersecurity &amp; Blockchain · GPA 3.47 / 4.00 (Honors)</em></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="item">
+        <div class="row"><h3>Saudi Basic Industries Corporation (SABIC)</h3><span class="when">Jun – Aug 2025 · Jubail</span></div>
+        <p class="sub">Data Science &amp; Machine Learning Intern, Digital Transformation</p>
+        <ul>
+          <li>Built a predictive maintenance pipeline for the Asset Health Care (AHC) project, detecting anomalies in industrial equipment (pumps, piping, sensor clusters) to reduce unplanned plant shutdowns and emergency maintenance costs.</li>
+          <li>Cleaned and processed 195,033 sensor records in RapidMiner, engineering logic with the Lag Operator to filter offline states (&lt;2,500 threshold) and post-shutdown startup windows, reducing the dataset to 16,030 modeling-ready observations.</li>
+          <li>Designed and tuned three unsupervised anomaly detection models — One-Class LIBSVM (RBF kernel, ν=0.03), Local Outlier Factor (LOF), and Influenced Outlierness (INFLO) — to flag equipment deviations across multi-sensor dimensions.</li>
+          <li>Overcame a strict no-code constraint by implementing all modeling and preprocessing logic natively in RapidMiner, chaining nested loops, lag functions, and generate-attribute operators in place of custom scripts.</li>
+          <li>Engineered a post-processing layer to classify sustained anomalies (≥2 hours) and rank top contributing sensors, delivering structured diagnostic outputs that received full approval from department leadership.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="item">
+        <div class="row"><h3>Integrated Waste-to-Electricity System <span class="sub" style="font-weight:400">— Senior Project</span></h3><span class="when">Jan – May 2026</span></div>
+        <p class="sub"><em>Python, FastAPI, SQLite, Scikit-learn, Streamlit</em></p>
+        <ul>
+          <li>Led software architecture and development for a 5-person interdisciplinary senior project, designing the control/monitoring/safety system, local API gateway, edge computing data layer, and dashboard UI.</li>
+          <li>Trained a Random Forest model to forecast power output 60 minutes ahead, achieving 91.1% R² and MAE as low as 0.09W within the ≤10% error.</li>
+          <li>Built an offline edge-computing pipeline (FastAPI + SQLite) with real-time anomaly detection.</li>
+          <li>Designed a network-isolated security architecture with localhost-only API execution and tamper-resistant logging, validated by disconnecting network adapters to confirm zero external calls.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="row"><h3>KFUPM Study Hub</h3><span class="when">Feb – May 2025</span></div>
+        <p class="sub"><em>React, Node.js, Express.js, MongoDB</em></p>
+        <ul>
+          <li>Built a full-stack academic platform for KFUPM students to track coursework and deadlines, as part of a 5-person team.</li>
+          <li>Developed a task management system with categorization (assignments, exams, projects), a calendar dashboard, and automated email deadline reminders.</li>
+          <li>Developed a course resource system with upload, moderator review, and approval workflows for student-submitted materials.</li>
+          <li>Implemented secure authentication using bcrypt password hashing and JWT-based session tokens, with role-based access control (RBAC) restricting administrative and approval actions to authorized student, moderator, and admin tiers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <p><b>Software Engineering:</b> Full-Stack Development (React, Node.js, Express.js, FastAPI), RESTful API Design, System Architecture, Requirements Engineering, Software Testing &amp; QA, Agile Teamwork.</p>
+      <p><b>Cybersecurity &amp; SOC:</b> SOC Operations (TryHackMe SOC Level 1 training — alert triage, SIEM log correlation, packet analysis), Identity &amp; Access Management (JWT, bcrypt, RBAC), Network Security, Cryptography (AES, RSA, Diffie-Hellman).</p>
+      <p><b>Security Tools:</b> Nmap, Burp Suite, Metasploit, Wireshark, SIEM platforms, Kali Linux.</p>
+      <p><b>Machine Learning &amp; Data:</b> Predictive Modeling &amp; Anomaly Detection, Random Forest, One-Class SVM, LOF, INFLO, Scikit-learn, RapidMiner.</p>
+      <p><b>Databases:</b> MongoDB, SQLite, SQL, Relational &amp; NoSQL Schema Design.</p>
+      <p><b>Programming:</b> Python, C, JavaScript, SQL, Git.</p>
+    </section>
+
+    <section class="two">
+      <div>
+        <h2>Certifications</h2>
+        <p>RapidMiner Data Engineering &amp; Machine Learning (Professional &amp; Master)</p>
+      </div>
+      <div>
+        <h2>Languages</h2>
+        <p>Arabic (native), English (professional)</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
