@@ -36,7 +36,7 @@
 
   <main>
     <!-- INTRO -->
-    <section class="intro wrap">
+    <section id="intro" class="intro wrap slide" data-title="Intro">
       <div class="intro__text">
         <p class="meta">Software engineer · Saudi Arabia</p>
         <h1>
@@ -63,7 +63,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section wrap">
+    <section id="experience" class="section wrap slide" data-title="Experience">
       <div class="section__head">
         <h2>Experience</h2>
         <p class="meta">Internship, summer 2025</p>
@@ -118,12 +118,20 @@
     </section>
 
     <!-- WORK -->
-    <section id="work" class="section wrap">
+    <section id="work" class="section wrap slide" data-title="Work">
       <div class="section__head">
         <h2>Selected work</h2>
         <p class="meta">Two team projects, 2025–2026</p>
+        <div class="carousel__nav">
+          <span class="carousel__hint">Scroll for the next project</span>
+          <button type="button" class="carousel__btn" data-dir="-1" aria-label="Previous project">←</button>
+          <span class="carousel__count"><b>01</b> / 02</span>
+          <button type="button" class="carousel__btn" data-dir="1" aria-label="Next project">→</button>
+        </div>
       </div>
 
+      <div class="carousel">
+      <div class="carousel__track">
       <!-- Project 01 -->
       <article class="project">
         <aside class="project__meta">
@@ -138,6 +146,7 @@
         </aside>
 
         <div class="project__body">
+          <div class="project__text">
           <h3>Integrated Waste&#8209;to&#8209;Electricity System</h3>
           <p class="project__lede">
             An interdisciplinary team built a steam-turbine plant that turns waste into
@@ -153,7 +162,9 @@
             deletion is detected. A Random Forest model forecasts the generator&rsquo;s power 60 minutes
             ahead from the last half hour of sensor history and the waste-feed schedule. A built-in simulator lets the whole stack run without the hardware rig.
           </p>
+          </div>
 
+          <div class="project__visual">
           <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to an append-only, hash-chained SQLite log; a pressure safety check and a Random Forest 60-minute power forecast read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
             <div class="diagram__boundary">
               <span class="diagram__label">Offline · localhost only</span>
@@ -176,6 +187,7 @@
             <div><dt>0.026 W</dt><dd>mean absolute error of the forecast</dd></div>
             <div><dt>0</dt><dd>external network calls with adapters disconnected</dd></div>
           </dl>
+          </div>
         </div>
       </article>
 
@@ -193,6 +205,7 @@
         </aside>
 
         <div class="project__body">
+          <div class="project__text">
           <h3>KFUPM Study Hub</h3>
           <p class="project__lede">
             A platform for KFUPM students to track assignments, exams and projects on a
@@ -204,7 +217,9 @@
             are JWTs, and every route checks one of three roles, so approval and admin actions
             can't be reached by tampering with the client.
           </p>
+          </div>
 
+          <div class="project__visual">
           <figure class="rbac">
             <table>
               <caption class="sr-only">Permissions by role</caption>
@@ -220,12 +235,15 @@
             </table>
             <figcaption>Role-based access control, enforced server-side.</figcaption>
           </figure>
+          </div>
         </div>
       </article>
+      </div>
+      </div>
     </section>
 
     <!-- BACKGROUND -->
-    <section id="background" class="section wrap">
+    <section id="background" class="section wrap slide" data-title="Background">
       <div class="section__head">
         <h2>Background</h2>
       </div>
@@ -261,7 +279,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="wrap">
+    <section id="contact" class="wrap slide" data-title="Contact">
      <div class="contact">
       <p class="meta">Contact</p>
       <h2>Hiring for a software or security role? <mark>Let’s talk.</mark></h2>
