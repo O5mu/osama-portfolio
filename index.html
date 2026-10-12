@@ -18,6 +18,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#fafafa">
+  <script>
+    // Light is the default; apply a saved dark choice before first paint so there is no flash
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+        document.querySelector('meta[name="theme-color"]').content = '#0e1011';
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -29,6 +39,10 @@
         <a href="#work">Work</a>
         <a href="#background" class="hide-sm">Background</a>
         <a href="#contact">Contact</a>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        </button>
         <a href="cv.html" class="top__cv">Résumé</a>
       </nav>
     </div>
@@ -165,6 +179,19 @@
           </div>
 
           <div class="project__visual">
+          <div class="views" data-view="diagram">
+          <div class="views__tabs" role="tablist" aria-label="Project 01 visuals">
+            <span class="views__pill" aria-hidden="true"></span>
+            <button type="button" role="tab" aria-selected="true" data-view="diagram">Architecture</button>
+            <button type="button" role="tab" aria-selected="false" data-view="photo">Prototype</button>
+          </div>
+          <div class="views__stage">
+          <figure class="views__photo">
+            <a href="assets/capstone-showcase.jpg" target="_blank" rel="noopener">
+              <img src="assets/capstone-showcase.jpg" alt="The capstone team at the project showcase with the boiler prototype, a battery and a laptop running the live dashboard" width="1600" height="1066" loading="lazy">
+            </a>
+            <figcaption>The working prototype at the project showcase: boiler rig, battery and the live dashboard.</figcaption>
+          </figure>
           <figure class="diagram" aria-label="System architecture: boiler sensors stream through an Arduino over serial to a localhost FastAPI gateway, which writes to an append-only, hash-chained SQLite log; a pressure safety check and a Random Forest 60-minute power forecast read from it and feed a Streamlit dashboard with a 60 PSI pressure alarm. Everything runs inside an offline boundary.">
             <div class="diagram__boundary">
               <span class="diagram__label">Offline · localhost only</span>
@@ -181,6 +208,8 @@
             </div>
             <figcaption>Architecture. Isolation was verified by disconnecting the network adapters and confirming zero external calls.</figcaption>
           </figure>
+          </div>
+          </div>
 
           <dl class="figures">
             <div><dt>90.9%</dt><dd>R² forecasting generator power 60 minutes ahead on held-out runs</dd></div>

@@ -7,6 +7,37 @@ const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+// Theme toggle: light by default, flips to dark and remembers the choice
+const themeBtn = document.querySelector('.theme-toggle');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const currentTheme = () => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+const syncThemeLabel = () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  themeBtn.setAttribute('aria-label', `Switch to ${next} mode`);
+};
+let themeTimer;
+themeBtn.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  const html = document.documentElement;
+  html.classList.add('theme-anim');
+  html.dataset.theme = next;
+  themeMeta.content = next === 'dark' ? '#0e1011' : '#fafafa';
+  try { localStorage.setItem('theme', next); } catch {}
+  syncThemeLabel();
+  clearTimeout(themeTimer);
+  themeTimer = setTimeout(() => html.classList.remove('theme-anim'), 500);
+});
+syncThemeLabel();
+
+// Architecture | Prototype switch on a project's visual
+document.querySelectorAll('.views').forEach((views) => {
+  const tabs = [...views.querySelectorAll('[role="tab"]')];
+  tabs.forEach((tab) => tab.addEventListener('click', () => {
+    views.dataset.view = tab.dataset.view;
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+  }));
+});
+
 // Copy-to-clipboard buttons
 document.querySelectorAll('[data-copy]').forEach((btn) => {
   btn.addEventListener('click', async () => {
